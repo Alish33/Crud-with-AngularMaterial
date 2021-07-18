@@ -1,0 +1,29 @@
+<div class="col-md-12 mt-4 shadow-lg">
+    <table class="table table-striped mt-4 table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">SN</th>
+                <th scope="col">NAME</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">CONTACT</th>
+                <th scope="col">DOB</th>
+                <th scope="col">ADDRESS</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let abc of store; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>{{abc.name}}</td>
+                <td>{{abc.email}}</td>
+                <td>{{abc.contact}}</td>
+                <td>{{abc.DOB.toDate()}}</td>
+                <td>{{abc.address}}</td>
+                <td>
+                    <a type="btn" [routerLink]="['/add', abc.id]" class="btn btn-sm mx-3 btn-primary">Edit</a>
+                    <a type="btn" class="btn btn-sm btn-danger" (click)="deleteData(abc.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
